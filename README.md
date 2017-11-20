@@ -1,4 +1,4 @@
-# labtabplate
+# labtemplate
 
 # Setup
 
