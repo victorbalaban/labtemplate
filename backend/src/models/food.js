@@ -1,7 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Todo = sequelize.define('Todo', {
-    title: DataTypes.STRING
+  var food = sequelize.define('food', {
+    name: DataTypes.STRING,
+    location: DataTypes.STRING,
+    type: DataTypes.STRING,
+    program: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
@@ -9,5 +12,5 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-  return Todo;
+  return food;
 };
