@@ -35,3 +35,15 @@ exports.delete = function (req, res) {
     })
     .catch(error => res.status(400).send(error));
 };
+
+exports.update = function(req, res) {
+  var id = req.params.id;
+  var updates = req.body;
+
+  cinema.update({"_id":id}, req.body,
+    function (err, numberAffected) {
+      if (err) return console.log(err);
+      console.log('Updated %d cinema', numberAffected);
+      return res.send(202);
+  });
+}
