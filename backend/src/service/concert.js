@@ -1,34 +1,34 @@
 "use strict";
 
-const cinema = require('../models').cinema;
+const concert = require('../models').concert;
 
 exports.list = function (req, res) {
-  cinema.findAll().then(cinema => {
-    res.jsonp(cinema);
+  concert.findAll().then(concert => {
+    res.jsonp(concert);
   });
 };
 
 exports.create = function (req, res) {
-  res.jsonp(cinema.create(req.body));
+  res.jsonp(concert.create(req.body));
 };
 
 exports.findById = function (req, res) {
   let id = req.params.id;
-  cinema.findById(id).then(cinema => {
-    res.jsonp(cinema);
+  concert.findById(id).then(concert => {
+    res.jsonp(concert);
   });
 };
 
 exports.delete = function (req, res) {
   let id = req.params.id;
-  cinema.findById(req.params.id)
-    .then(cinema => {
-      if (!cinema) {
+  concert.findById(req.params.id)
+    .then(concert => {
+      if (!concert) {
         return res.status(400).send({
-          message: 'Cinema Not Found',
+          message: 'concert Not Found',
         });
       }
-      return cinema
+      return concert
         .destroy()
         .then(() => res.status(204).send())
         .catch(error => res.status(400).send(error));
@@ -40,10 +40,10 @@ exports.update = function(req, res) {
   var id = req.params.id;
   var updates = req.body;
 
-  cinema.update({"_id":id}, req.body,
+  concert.update({"_id":id}, req.body,
     function (err, numberAffected) {
       if (err) return console.log(err);
-      console.log('Updated %d cinema', numberAffected);
+      console.log('Updated %d concert', numberAffected);
       return res.send(202);
   });
 }
