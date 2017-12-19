@@ -15,7 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Components
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components';
+import { PubComponent } from './components';
 
 // used to create fake backend
 import { fakeBackendProvider } from './service';
@@ -30,7 +30,7 @@ import { FoodComponent } from './components/pages/food/food.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    PubComponent,
     FoodComponent
   ],
   imports: [

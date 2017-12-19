@@ -11,3 +11,13 @@
     </p-dataTable>
 
 <p-contextMenu #cm [model]="items"></p-contextMenu>
+
+<br>id
+<input type="text" pInputText [(ngModel)]="id"/>
+<br>name
+<input type="text" pInputText [(ngModel)]="name"/>
+<br>location
+<input type="text" pInputText [(ngModel)]="location"/>
+<br>program
+<input type="text" pInputText [(ngModel)]="program"/>
+<button pButton type="button" (click)="addPub(id,name, location, program)" label="Click"></button>
