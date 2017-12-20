@@ -5,6 +5,6 @@ var pub = require('../service/').pub;
 router.get('/', pub.list);
 router.get('/:id', pub.findById);
 router.post('/', pub.create);
-router.update('/', pub.update);
-
+router.put('/', pub.update);
+router.delete('/:id',pub.delete);
 module.exports = router;

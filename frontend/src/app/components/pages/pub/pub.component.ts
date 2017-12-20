@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../service/';
 import { MenuItem } from 'primeng/components/common/menuitem';
+import { error } from 'selenium-webdriver';
 @Component({
   selector: 'app-pub',
   templateUrl: './pub.component.html',
@@ -14,6 +15,8 @@ export class PubComponent implements OnInit {
 
   ngOnInit() {
     this.apiService.get('api/pub/').subscribe(res => {
+      console.log(res);
+      
       this.pubs = res;
     });
     this.items = [
@@ -31,9 +34,14 @@ export class PubComponent implements OnInit {
     });
 
   }
-  addPub(select: Pub)
+  addPub(name:string,location:string,program:string)
   {
-    this.apiService.post('api/pub/'+select.id+select.location+select.name+select.program);
+    const newPub = new Pub(name,location,program);
+    this.apiService.post('api/pub/',newPub).subscribe(res =>{
+      console.log(res);
+    }, error =>{
+      console.log(error);
+    });
 
   }
 
@@ -41,9 +49,14 @@ export class PubComponent implements OnInit {
 
 
 
-interface Pub {
-  id: number;
-  name: string;s
+class Pub {
+  id:number;
+  name: string;
   location: string;
   program: string;
+  constructor (name?:string,location?:string,program?:string){
+    this.name=name;
+    this.location=location;
+    this.program=program;
+  }
 }

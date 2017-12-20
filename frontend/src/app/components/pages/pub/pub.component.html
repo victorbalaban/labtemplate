@@ -4,7 +4,7 @@
   </p>
 </div> -->
 
-    <p-dataTable [value]="pub"  selectionMode="single" [(selection)]="selectedUser" [contextMenu]="cm">
+    <p-dataTable [value]="pubs"  selectionMode="single" [(selection)]="selectedPub" [contextMenu]="cm">
       <p-column field="name" header="Name"  [sortable]="true"></p-column>
       <p-column field="location" header="Location" [sortable]="true"></p-column>
       <p-column field="program" header="Program" [sortable]="true"></p-column>
@@ -12,12 +12,10 @@
 
 <p-contextMenu #cm [model]="items"></p-contextMenu>
 
-<br>id
-<input type="text" pInputText [(ngModel)]="id"/>
 <br>name
 <input type="text" pInputText [(ngModel)]="name"/>
 <br>location
 <input type="text" pInputText [(ngModel)]="location"/>
 <br>program
 <input type="text" pInputText [(ngModel)]="program"/>
-<button pButton type="button" (click)="addPub(id,name, location, program)" label="Click"></button>
+<button pButton type="button" (click)="addPub(name, location, program)" label="Click"></button>
