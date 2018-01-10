@@ -1,10 +1,4 @@
-<!-- <div class="container">
-  <p>
-    Welcome {{user}}!
-  </p>
-</div> -->
-
-    <p-dataTable [value]="pubs"  selectionMode="single" [(selection)]="selectedPub" [contextMenu]="cm">
+ <p-dataTable [value]="pubs"  selectionMode="single" [(selection)]="selectedPub" [contextMenu]="cm">
       <p-column field="name" header="Name"  [sortable]="true"></p-column>
       <p-column field="location" header="Location" [sortable]="true"></p-column>
       <p-column field="program" header="Program" [sortable]="true"></p-column>
@@ -12,10 +6,20 @@
 
 <p-contextMenu #cm [model]="items"></p-contextMenu>
 
-<br>name
-<input type="text" pInputText [(ngModel)]="name"/>
-<br>location
-<input type="text" pInputText [(ngModel)]="location"/>
-<br>program
-<input type="text" pInputText [(ngModel)]="program"/>
-<button pButton type="button" (click)="addPub(name, location, program)" label="Click"></button>
+<div class="input"><br>
+<table>
+    <tr>
+      <td>Name</td>
+      <td><input type="text" pInputText [(ngModel)]="name"/></td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td><input type="text" pInputText [(ngModel)]="location"/></td>
+    </tr>
+    <tr>
+      <td>Program</td>
+      <td><input type="text" pInputText [(ngModel)]="program"/></td>
+    </tr>
+  </table><br>
+  <button pButton type="button" (click)="addPub(name, location, program)" label="Create"></button>
+</div>

@@ -16,6 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
 // Components
 import { AppComponent } from './app.component';
 import { PubComponent } from './components';
+import { FoodComponent } from './components/pages/food/food.component';
+import { HomeComponent } from './components';
 
 // used to create fake backend
 import { fakeBackendProvider } from './service';
@@ -25,13 +27,13 @@ import { CalendarModule } from 'primeng/components/calendar/calendar';
 import { ButtonModule } from 'primeng/components/button/button';
 import { InputTextModule } from 'primeng/components/inputtext/inputtext';
 import { ContextMenuModule } from 'primeng/components/contextmenu/contextmenu';
-import { FoodComponent } from './components/pages/food/food.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PubComponent,
-    FoodComponent
+    FoodComponent,
+    HomeComponent
   ],
   imports: [
     AppRoutingModule,
