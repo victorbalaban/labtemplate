@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // UI
 import { SuiModule } from 'ng2-semantic-ui';
-import { DataTableModule, SharedModule } from 'primeng/primeng';
+import { DataTableModule, SharedModule,ChartModule } from 'primeng/primeng';
 
 // Services
 import { ApiService } from './service';
@@ -18,6 +18,8 @@ import { AppComponent } from './app.component';
 import { PubComponent } from './components';
 import { FoodComponent } from './components/pages/food/food.component';
 import { HomeComponent } from './components';
+import { CinemaComponent } from './components';
+import { ConcertComponent } from './components';
 
 // used to create fake backend
 import { fakeBackendProvider } from './service';
@@ -33,7 +35,9 @@ import { ContextMenuModule } from 'primeng/components/contextmenu/contextmenu';
     AppComponent,
     PubComponent,
     FoodComponent,
-    HomeComponent
+    HomeComponent,
+    CinemaComponent, 
+    ConcertComponent
   ],
   imports: [
     AppRoutingModule,
@@ -43,6 +47,7 @@ import { ContextMenuModule } from 'primeng/components/contextmenu/contextmenu';
     HttpModule,
     ReactiveFormsModule,
     SuiModule,
+    ChartModule,
     // Prime
     DataTableModule,
     SharedModule,
