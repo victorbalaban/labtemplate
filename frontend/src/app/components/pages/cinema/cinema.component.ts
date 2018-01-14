@@ -10,10 +10,10 @@ export class CinemaComponent implements OnInit {
   constructor() { 
     
   }
-
+  
   ngOnInit() {
     this.data = {
-      labels: [' Star Wars: Ultimii Jedi',' Gardienii Galaxiei Vol. 2',' Frumoasa si Bestia'],
+      labels: [' Star Wars: The Last Jedi',' Guardians of the Galaxy Vol. 2',' Beauty and the Beast'],
       datasets: [
           {
               data: [574, 389, 504],

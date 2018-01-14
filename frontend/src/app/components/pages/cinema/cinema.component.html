@@ -2,6 +2,14 @@
  <h1>
    Top highest grossing movies 2017
  </h1>
-<p-chart type="doughnut" [data]="data"></p-chart>
+<p-chart type="doughnut" [data]="data" style="width:30%"></p-chart>
 <p align="center">Data in M$</p>
+<p-dataTable [value]="Cinema"  selectionMode="single" [(selection)]="selectedCinema" [contextMenu]="cm">
+  <p-column field="name" header="Name"  [sortable]="true"></p-column>
+  <p-column field="location" header="Location" [sortable]="true"></p-column>
+  <p-column field="type" header="Type" [sortable]="true"></p-column>
+  <p-column field="program" header="Program" [sortable]="true"></p-column>
+</p-dataTable>
+
+
 
