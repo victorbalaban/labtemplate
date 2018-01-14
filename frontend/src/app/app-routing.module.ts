@@ -12,12 +12,6 @@ const routes: Routes = [
   },
   {
     path: 'home', component: HomeComponent
-  },
-  {
-    path: 'concert', component: HomeComponent
-  },
-  {
-    path: 'cinema', component: HomeComponent
   }
 ];
 
