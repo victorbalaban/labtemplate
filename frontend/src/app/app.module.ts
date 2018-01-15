@@ -20,6 +20,7 @@ import { FoodComponent } from './components/pages/food/food.component';
 import { HomeComponent } from './components';
 import { CinemaComponent } from './components';
 import { ConcertComponent } from './components';
+import {SportComponent} from './components';
 
 
 // used to create fake backend
@@ -38,7 +39,8 @@ import { ContextMenuModule } from 'primeng/components/contextmenu/contextmenu';
     FoodComponent,
     HomeComponent,
     CinemaComponent, 
-    ConcertComponent
+    ConcertComponent,
+    SportComponent
   ],
   imports: [
     AppRoutingModule,

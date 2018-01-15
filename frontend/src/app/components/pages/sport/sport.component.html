@@ -1,0 +1,78 @@
+<style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .center {
+          position: absolute;
+          top: 10px;
+          left: 450px;
+        }
+        .tiel {
+          position: absolute;
+          top: 10px;
+          left: 300px;
+        }
+        h1 {
+          font-size: 3vw;
+          font-family: 'Times New Roman';
+        }
+        </style>
+
+
+<div class="center">
+        <div class="titel"><h1>Did you WORKOUT today?</h1>
+        <img src="/assets/images/sporty.gif" width="600" height="265">
+       
+</div>
+
+<div class>
+
+<p-dataTable [value]="pubs"  selectionMode="single" [(selection)]="selectedPub" [contextMenu]="cm">
+        <p-column field="name" header="Name"  [sortable]="true"></p-column>
+        <p-column field="location" header="Location" [sortable]="true"></p-column>
+        <p-column field="date" header="Date" [sortable]="true"></p-column>
+        <p-column field="time" header="Time" [sortable]="true"></p-column>
+        <p-column field="description" header="Description" [sortable]="true"></p-column>
+        <p-column field="type" header="Type" [sortable]="true"></p-column>
+        <p-column field="equepment_needed" header="Equepment needed" [sortable]="true"></p-column>
+      </p-dataTable>
+  
+  <p-contextMenu #cm [model]="items"></p-contextMenu>
+</div>
+
+
+  
+  <div class="input"><br>
+  <table>
+      <tr>
+        <td>Name</td>
+        <td><input type="text" pInputText [(ngModel)]="name"/></td>
+      </tr>
+      <tr>
+        <td>Location</td>
+        <td><input type="text" pInputText [(ngModel)]="location"/></td>
+      </tr>
+      <tr>
+        <td>Date</td>
+        <td><input type="text" pInputText [(ngModel)]="date"/></td>
+      </tr>
+      <tr>
+        <td>Time</td>
+        <td><input type="text" pInputText [(ngModel)]="date"/></td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td><input type="text" pInputText [(ngModel)]="description"/></td>
+      </tr>
+      <tr>
+        <td>Type</td>
+        <td><input type="text" pInputText [(ngModel)]="type"/></td>
+      </tr>
+      <tr>
+        <td>Equipment neede</td>
+        <td><input type="text" pInputText [(ngModel)]="equipment_needed"/></td>
+      </tr>
+    </table><br>
+    <button pButton type="button" (click)="addPub(name, location, program)" label="Create"></button>
+  </div>
