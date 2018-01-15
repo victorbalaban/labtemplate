@@ -20,9 +20,11 @@
         </style>
 
 
+
 <div class="center">
         <div class="titel"><h1>Did you WORKOUT today?</h1>
         <img src="/assets/images/sporty.gif" width="600" height="265">
+        
        
 </div>
 
@@ -59,7 +61,7 @@
       </tr>
       <tr>
         <td>Time</td>
-        <td><input type="text" pInputText [(ngModel)]="date"/></td>
+        <td><input type="text" pInputText [(ngModel)]="time"/></td>
       </tr>
       <tr>
         <td>Description</td>
@@ -74,5 +76,6 @@
         <td><input type="text" pInputText [(ngModel)]="equipment_needed"/></td>
       </tr>
     </table><br>
-    <button pButton type="button" (click)="addPub(name, location, program)" label="Create"></button>
+    <button pButton type="button" (click)="addSport(name, location, date, time, description, type, equipment_needed)" label="Create"></button>
+    
   </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../service/';
 import { MenuItem } from 'primeng/components/common/menuitem';
 import { error } from 'selenium-webdriver';
+import {ToolbarModule} from 'primeng/primeng';
 
 @Component({
   selector: 'app-sport',

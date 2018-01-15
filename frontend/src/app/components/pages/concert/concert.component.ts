@@ -11,10 +11,29 @@ import {ToolbarModule} from 'primeng/primeng';
   styleUrls: ['./concert.component.less']
 })
 export class ConcertComponent implements OnInit {
+  data: any;
   concerts: Concert[];
   selectedConcert: Concert;
   items: MenuItem[];
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService) {
+     this.data = {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July','August', 'September', 'Octomber','November','December'],
+      datasets: [
+          {
+              label: 'Classic Music',
+              backgroundColor: '#42A5F5',
+              borderColor: '#1E88E5',
+              data: [65, 59, 80, 81, 56, 55]
+          },
+          {
+              label: 'Other Music',
+              backgroundColor: '#9CCC65',
+              borderColor: '#7CB342',
+              data: [28, 48, 40, 19, 86, 27, ]
+          }
+      ]
+  }
+   }
   
   images: any[];
 
@@ -46,6 +65,28 @@ export class ConcertComponent implements OnInit {
     });
 
   }
+
+  countClassic(select: Concert) {
+    var i=0;
+    if(JSON.stringify(select.gendre)=='classic')
+    {
+      i++;
+    }
+    console.log(i)
+
+  }
+  countOther(select: Concert) {
+    var i=0;
+    if(JSON.stringify(select.gendre)!='classic')
+    {
+      i++;
+    }
+    console.log(i)
+
+  }
+
+
+  
   addConcert(name:string,band:string,date:Date, time:string, gendre:string)
   {
     const newPub = new Concert(name,band, date, time, gendre);

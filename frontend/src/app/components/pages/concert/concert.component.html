@@ -29,14 +29,16 @@
               </tr>
               <tr>
                 <td>Time</td>
-                <td><input type="text" pInputText [(ngModel)]="date"/></td>
+                <td><input type="text" pInputText [(ngModel)]="time"/></td>
               </tr>
               <tr>
-                <td>Gndre</td>
+                <td>Gendre</td>
                 <td><input type="text" pInputText [(ngModel)]="gendre"/></td>
               </tr>
             </table><br>
-            <button pButton type="button" (click)="addPub(name, location, program)" label="Create"></button>
+            <button pButton type="button" (click)="addConcert(name, band, date,time, gendre)" label="Create"></button>
+            <p-chart type="bar" [data]="data"></p-chart>
+</div>
     
         
        
