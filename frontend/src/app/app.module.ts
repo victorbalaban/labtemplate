@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // UI
 import { SuiModule } from 'ng2-semantic-ui';
 import { DataTableModule, SharedModule,ChartModule } from 'primeng/primeng';
+import {GalleriaModule} from 'primeng/primeng';
 
 // Services
 import { ApiService } from './service';
@@ -49,6 +50,7 @@ import { ContextMenuModule } from 'primeng/components/contextmenu/contextmenu';
     ReactiveFormsModule,
     SuiModule,
     ChartModule,
+    GalleriaModule,
     // Prime
     DataTableModule,
     SharedModule,
