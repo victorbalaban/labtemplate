@@ -1,3 +1,45 @@
-<p>
-  concert works!
-</p>
+
+<div class>
+        <p-dataTable [value]="pubs"  selectionMode="single" [(selection)]="selectedPub" [contextMenu]="cm">
+                <p-column field="name" header="Name"  [sortable]="true"></p-column>
+                <p-column field="band" header="Band" [sortable]="true"></p-column>
+                <p-column field="date" header="Date" [sortable]="true"></p-column>
+                <p-column field="time" header="Time" [sortable]="true"></p-column>
+                <p-column field="gendre" header="Gendre" [sortable]="true"></p-column>
+              </p-dataTable>
+          
+          <p-contextMenu #cm [model]="items"></p-contextMenu>
+        </div>
+        
+        
+          
+          <div class="input"><br>
+          <table>
+              <tr>
+                <td>Name</td>
+                <td><input type="text" pInputText [(ngModel)]="name"/></td>
+              </tr>
+              <tr>
+                <td>Band</td>
+                <td><input type="text" pInputText [(ngModel)]="band"/></td>
+              </tr>
+              <tr>
+                <td>Date</td>
+                <td><input type="text" pInputText [(ngModel)]="date"/></td>
+              </tr>
+              <tr>
+                <td>Time</td>
+                <td><input type="text" pInputText [(ngModel)]="time"/></td>
+              </tr>
+              <tr>
+                <td>Gendre</td>
+                <td><input type="text" pInputText [(ngModel)]="gendre"/></td>
+              </tr>
+            </table><br>
+            <button pButton type="button" (click)="addConcert(name, band, date,time, gendre)" label="Create"></button>
+            <p-chart type="bar" [data]="data"></p-chart>
+</div>
+    
+        
+       
+       
