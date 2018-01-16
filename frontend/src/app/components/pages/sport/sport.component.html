@@ -6,7 +6,7 @@
         .center {
           position: absolute;
           top: 10px;
-          left: 450px;
+          left: 20px;
         }
         .tiel {
           position: absolute;
@@ -23,14 +23,15 @@
 
 <div class="center">
         <div class="titel"><h1>Did you WORKOUT today?</h1>
+          
         <img src="/assets/images/sporty.gif" width="600" height="265">
+        </div>
         
-       
-</div>
 
-<div class>
 
-<p-dataTable [value]="pubs"  selectionMode="single" [(selection)]="selectedPub" [contextMenu]="cm">
+<div class="restOf">
+
+<p-dataTable [value]="sports"  selectionMode="single" [(selection)]="selectedSport" [contextMenu]="cm">
         <p-column field="name" header="Name"  [sortable]="true"></p-column>
         <p-column field="location" header="Location" [sortable]="true"></p-column>
         <p-column field="date" header="Date" [sortable]="true"></p-column>
@@ -43,7 +44,7 @@
   <p-contextMenu #cm [model]="items"></p-contextMenu>
 </div>
 
-
+<br>
   
   <div class="input"><br>
   <table>
@@ -57,11 +58,11 @@
       </tr>
       <tr>
         <td>Date</td>
-        <td><input type="text" pInputText [(ngModel)]="date"/></td>
+        <td><input type="date" pInputText [(ngModel)]="date"/></td>
       </tr>
       <tr>
         <td>Time</td>
-        <td><input type="text" pInputText [(ngModel)]="time"/></td>
+        <td><input type="time" pInputText [(ngModel)]="time"/></td>
       </tr>
       <tr>
         <td>Description</td>

@@ -6,5 +6,6 @@ router.get('/', sport.list);
 router.get('/:id', sport.findById);
 router.post('/', sport.create);
 router.update('/', sport.update);
+router.delete('/:id', sport.delete);
 
 module.exports = router;

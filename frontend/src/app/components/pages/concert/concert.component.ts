@@ -89,8 +89,8 @@ export class ConcertComponent implements OnInit {
   
   addConcert(name:string,band:string,date:Date, time:string, gendre:string)
   {
-    const newPub = new Concert(name,band, date, time, gendre);
-    this.apiService.post('api/concert/',newPub).subscribe(res =>{
+    const newConcert = new Concert(name,band, date, time, gendre);
+    this.apiService.post('api/concert/',newConcert).subscribe(res =>{
       console.log(res);
     }, error =>{
       console.log(error);

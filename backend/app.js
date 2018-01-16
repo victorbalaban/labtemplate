@@ -28,11 +28,15 @@ var user = require('./src/rest/user');
 var pub = require('./src/rest/pub');
 var cinema = require('./src/rest/cinema');
 var food = require('./src/rest/food');
+var concert = require('./src/rest/concert');
+var sport = require('./src/rest/sport');
 app.use('/api', index);
 app.use('/api/user', user);
 app.use('/api/pub', pub);
 app.use('/api/cinema', cinema);
 app.use('/api/food', food);
+app.use('/api/conert', concert);
+app.use('/api/sport', sport);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

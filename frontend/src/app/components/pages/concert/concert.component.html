@@ -1,6 +1,6 @@
 
 <div class>
-        <p-dataTable [value]="pubs"  selectionMode="single" [(selection)]="selectedPub" [contextMenu]="cm">
+        <p-dataTable [value]="concerts"  selectionMode="single" [(selection)]="selectedConcert" [contextMenu]="cm">
                 <p-column field="name" header="Name"  [sortable]="true"></p-column>
                 <p-column field="band" header="Band" [sortable]="true"></p-column>
                 <p-column field="date" header="Date" [sortable]="true"></p-column>
@@ -25,11 +25,11 @@
               </tr>
               <tr>
                 <td>Date</td>
-                <td><input type="text" pInputText [(ngModel)]="date"/></td>
+                <td><input type="date" pInputText [(ngModel)]="date"/></td>
               </tr>
               <tr>
                 <td>Time</td>
-                <td><input type="text" pInputText [(ngModel)]="time"/></td>
+                <td><input type="time" pInputText [(ngModel)]="time"/></td>
               </tr>
               <tr>
                 <td>Gendre</td>

@@ -6,6 +6,6 @@ router.get('/', concert.list);
 router.get('/:id', concert.findById);
 router.post('/', concert.create);
 router.update('/', concert.update);
-
+router.delete('/:id', concert.delete);
 
 module.exports = router;

@@ -38,7 +38,7 @@ export class SportComponent implements OnInit {
     });
 
   }
-  addPub(name:string,location:string,date:Date,time:string,description:string,type:string, equipment_needed:string)
+  addSport(name:string,location:string,date:Date,time:string,description:string,type:string, equipment_needed:string)
   {
     const newSport = new Sport(name,location,date,time,description,type,equipment_needed);
     this.apiService.post('api/sport/',newSport).subscribe(res =>{
