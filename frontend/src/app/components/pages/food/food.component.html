@@ -1,7 +1,4 @@
-<p>
-  food works!
-</p>
-<p-dataTable [value]="Food"  selectionMode="single" [(selection)]="selectedFood" [contextMenu]="cm">
+<p-dataTable [value]="foods"  selectionMode="single" [(selection)]="selectedFood" [contextMenu]="cm">
   <p-column field="name" header="Name"  [sortable]="true"></p-column>
   <p-column field="location" header="Location" [sortable]="true"></p-column>
   <p-column field="type" header="Type" [sortable]="true"></p-column>
@@ -9,3 +6,26 @@
 </p-dataTable>
 
 <p-contextMenu #cm [model]="items"></p-contextMenu>
+
+<div class="input"><br>
+  <table>
+      <tr>
+        <td>Name</td>
+        <td><input type="text" pInputText [(ngModel)]="name"/></td>
+      </tr>
+      <tr>
+        <td>Location</td>
+        <td><input type="text" pInputText [(ngModel)]="location"/></td>
+      </tr>
+      <tr>
+        <td>Type</td>
+        <td><input type="text" pInputText [(ngModel)]="type"/></td>
+      </tr>
+      <tr>
+        <td>Program</td>
+        <td><input type="text" pInputText [(ngModel)]="program"/></td>
+      </tr>
+    </table><br>
+    <button pButton type="button" (click)="addFood(name, location, type, program)" label="Create"></button>
+  </div>
+  

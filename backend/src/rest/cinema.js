@@ -5,6 +5,7 @@ var cinema = require('../service/').cinema;
 router.get('/', cinema.list);
 router.get('/:id', cinema.findById);
 router.post('/', cinema.create);
-router.update('/', cinema.update);
+//router.update('/', cinema.update);
+router.delete('/:id', cinema.delete);
 
 module.exports = router;

@@ -4,12 +4,45 @@
  </h1>
 <p-chart type="doughnut" [data]="data" style="width:30%"></p-chart>
 <p align="center">Data in M$</p>
-<p-dataTable [value]="Cinema"  selectionMode="single" [(selection)]="selectedCinema" [contextMenu]="cm">
+<p-dataTable [value]="cinemas"  selectionMode="single" [(selection)]="selectedCinema" [contextMenu]="cm">
   <p-column field="name" header="Name"  [sortable]="true"></p-column>
   <p-column field="location" header="Location" [sortable]="true"></p-column>
-  <p-column field="type" header="Type" [sortable]="true"></p-column>
-  <p-column field="program" header="Program" [sortable]="true"></p-column>
+  <p-column field="date" header="Date" [sortable]="true"></p-column>
+  <p-column field="time" header="Time" [sortable]="true"></p-column>
+  <p-column field="genre" header="Genre" [sortable]="true"></p-column>
+  <p-column field="room" header="Room" [sortable]="true"></p-column>
 </p-dataTable>
+<p-contextMenu #cm [model]="items"></p-contextMenu>
+
+<div class="input"><br>
+<table>
+    <tr>
+      <td>Name</td>
+      <td><input type="text" pInputText [(ngModel)]="name"/></td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td><input type="text" pInputText [(ngModel)]="location"/></td>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td><input type="date" pInputText [(ngModel)]="date"/></td>
+    </tr>
+    <tr>
+      <td>Time</td>
+      <td><input type="time" pInputText [(ngModel)]="time"/></td>
+    </tr>
+    <tr>
+      <td>Genre</td>
+      <td><input type="text" pInputText [(ngModel)]="genre"/></td>
+    </tr>
+    <tr>
+      <td>Room</td>
+      <td><input type="text" pInputText [(ngModel)]="room"/></td>
+    </tr>
+  </table><br>
+  <button pButton type="button" (click)="addCinema(name, location, date, time, genre, room)" label="Create"></button>
+</div>
 
 
 

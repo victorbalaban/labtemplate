@@ -5,6 +5,7 @@ var food = require('../service/').food;
 router.get('/', food.list);
 router.get('/:id', food.findById);
 router.post('/', food.create);
-router.update('/', food.update);
+//router.update('/', food.update);
+router.delete('/:id', food.delete);
 
 module.exports = router;
