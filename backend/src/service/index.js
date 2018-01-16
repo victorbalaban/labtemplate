@@ -6,5 +6,5 @@ const sport = require('./sport');
 const concert=require('./concert');
 
 module.exports = {
-  user,pub,cinema,food,sport
+  user,pub,cinema,food,sport,concert
 };

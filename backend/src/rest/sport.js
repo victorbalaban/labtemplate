@@ -5,7 +5,7 @@ var sport = require('../service/').sport;
 router.get('/', sport.list);
 router.get('/:id', sport.findById);
 router.post('/', sport.create);
-router.update('/', sport.update);
+router.put('/', sport.update);
 router.delete('/:id', sport.delete);
 
 module.exports = router;
