@@ -32,6 +32,7 @@ export class FoodComponent implements OnInit {
   deleteFood(select: Food) {
     this.apiService.delete('api/food/' + select.id).subscribe(res => {
       console.log(res);
+      window.location.reload();
     });
 
   }
