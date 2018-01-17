@@ -1,21 +1,81 @@
+<link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
+<style type="text/css">
+  .text{
+    color : #ffffff;
+    margin-top:20px;
+    font-family: 'Quattrocento', serif;
+    text-shadow: 5px 5px 5px black;
+  }
+  .container{
+    margin-top:20px;
+    margin-bottom:100px;
+    width:100%;
+    text-align:center;
+  }
+  hr{
+    margin: 30px;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+  }
 
- <h1>
-   Top highest grossing movies 2017
- </h1>
-<p-chart type="doughnut" [data]="data" style="width:30%"></p-chart>
-<p align="center">Data in M$</p>
-<p-dataTable [value]="cinemas"  selectionMode="single" [(selection)]="selectedCinema" [contextMenu]="cm">
-  <p-column field="name" header="Name"  [sortable]="true"></p-column>
-  <p-column field="location" header="Location" [sortable]="true"></p-column>
-  <p-column field="date" header="Date" [sortable]="true"></p-column>
-  <p-column field="time" header="Time" [sortable]="true"></p-column>
-  <p-column field="genre" header="Genre" [sortable]="true"></p-column>
-  <p-column field="room" header="Room" [sortable]="true"></p-column>
-</p-dataTable>
-<p-contextMenu #cm [model]="items"></p-contextMenu>
+  .gradient-style{
+    text-align:center; padding-top:20px; margin-bottom:50px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  }
+</style>
+<div style="background-color:rgb(51,51,51)">
+  <div  class="gradient-style">
+    <h1 class="text" style="font-size:60px">
+    Movies now showing in Brasov
+  </h1>
+  </div>
+  
+  <div class="container" *ngFor="let cinema of cinemas">
+    
+    <img src=
+    "https://cultivationuk.files.wordpress.com/2017/07/jumanji-welcome-to-the-jungle.jpg?w=947&h=468&crop=1"  width="70%">
+    <h1 class="text" style="font-size:45px">{{cinema.name}}</h1>
+    <h1 class="text" style="font-size:25px">Location :  {{cinema.location}}</h1>
+    <div class="text" style="font-size:20px">Date : {{cinema.date}}</div>
+    <div class="text" style="font-size:20px">At : {{cinema.time}}</div>
+    <div class="text" style="font-size:20px">Room : {{cinema.room}}</div>
+    <div class="text" style="font-size:20px">Genre : {{cinema.genre}}</div>
+    
+    <hr>
+  </div>
+
+</div>
+<div style="text-align:center; margin-bottom:50px"> 
+  <h1 class="text" style="font-size:60px;color:#131313; text-shadow:none">
+    Top highest grossing movies 2017
+  </h1>
+</div>
+
+
+
+<br>
+<br>
+<div style="font-size:20px;font-family: 'Quattrocento', serif;">
+  
+  <p-chart type="doughnut" [data]="data" style="width:10px;"></p-chart>
+  
+  <p align="center">Data in M$</p>
+    <p-dataTable [value]="cinemas"  selectionMode="single" [(selection)]="selectedCinema" [contextMenu]="cm">
+    <p-column field="name" header="Name"  [sortable]="true"></p-column>
+    <p-column field="location" header="Location" [sortable]="true"></p-column>
+    <p-column field="date" header="Date" [sortable]="true"></p-column>
+    <p-column field="time" header="Time" [sortable]="true"></p-column>
+    <p-column field="genre" header="Genre" [sortable]="true"></p-column>
+    <p-column field="room" header="Room" [sortable]="true"></p-column>
+  </p-dataTable>
+  <p-contextMenu #cm [model]="items"></p-contextMenu>
+</div>
+
 
 <div class="input"><br>
-<table>
+  <h1 style="font-size:30px;font-family: 'Quattrocento', serif;">Add new movie</h1>
+<table style="font-size:20px;font-family: 'Quattrocento', serif;">
     <tr>
       <td>Name</td>
       <td><input type="text" pInputText [(ngModel)]="name"/></td>
@@ -41,7 +101,7 @@
       <td><input type="text" pInputText [(ngModel)]="room"/></td>
     </tr>
   </table><br>
-  <button pButton type="button" (click)="addCinema(name, location, date, time, genre, room)" label="Create"></button>
+  <button pButton type="button" (click)="addCinema(name, location, date, time, genre, room)" label="Create" onClick="window.location.reload()"></button>
 </div>
 
 

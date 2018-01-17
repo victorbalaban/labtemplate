@@ -55,6 +55,7 @@ export class CinemaComponent implements OnInit {
   deleteCinema(select: Cinema) {
     this.apiService.delete('api/cinema/' + select.id).subscribe(res => {
       console.log(res);
+      window.location.reload();
     });
 
   }
